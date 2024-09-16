@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import CountryCard from './componets/CountryCard';
@@ -22,6 +23,7 @@ function App() {
     </BrowserRouter>
 
     </>
+
   );
 }
 
