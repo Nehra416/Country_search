@@ -15,7 +15,7 @@ function App() {
 
     <Route path="/" element={<CountrySearch/>} />
     <Route path="/card" element={<CountryCard/>} />
-    <Route path="/details" element={<CountryDetails/>} />
+    <Route path="/card/details" element={<CountryDetails/>} />
     <Route path='/loading' element={<LoadingSpinner/>} />
     <Route path='/error' element={<ErrorNotification/>} />
 

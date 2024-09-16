@@ -4,7 +4,8 @@ const CountryDetailsSlice = createSlice({
     name: 'country',
     initialState: {
         countrySearch: null,
-        countryDetails: null
+        countryDetails: null,
+        countryFullDetails: null
     },
     reducers: {
         setCountryDetails: (state, action) => {
@@ -13,8 +14,11 @@ const CountryDetailsSlice = createSlice({
         setCountrySearch: (state, action) => {
             state.countrySearch = action.payload;
         },
+        setCountryFullDetails: (state, action) => {
+            state.countryFullDetails = action.payload;
+        },
     }
 })
 
-export const { setCountryDetails, setCountrySearch } = CountryDetailsSlice.actions;
+export const { setCountryDetails, setCountrySearch, setCountryFullDetails } = CountryDetailsSlice.actions;
 export default CountryDetailsSlice.reducer;

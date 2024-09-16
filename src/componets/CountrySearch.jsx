@@ -2,20 +2,26 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LoadingSpinner from "./LoadingSpinner";
 import axios from "axios";
+import { useDispatch, useSelector } from 'react-redux'
+import { setCountryDetails } from "../redux/CountryDetailSlice";
 
 const CountrySearch = () => {
-  const [searchCountry,setSearchCountry] = useState("");
+  const [searchCountry, setSearchCountry] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const CountryDetails = useSelector(state => state.CountryDetails);
 
-  const getCountryCard = async(event) => {
+  const getCountryCard = async (event) => {
     event.preventDefault()
     // navigate("/loading");
     const response = await axios.get(`https://restcountries.com/v3.1/name/${searchCountry}`);
+    dispatch(setCountryDetails(response.data))
+    navigate('./card')
     console.log(response)
   }
-    return (
+  return (
     <div>
-      <form  onSubmit={getCountryCard}>
+      <form onSubmit={getCountryCard}>
         <input
           type="text"
           value={searchCountry}
