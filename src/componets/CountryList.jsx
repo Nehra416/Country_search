@@ -2,7 +2,9 @@ import React from 'react'
 
 const CountryList = () => {
   return (
-    <div>CountryList</div>
+    <div>
+      countryList
+    </div>
   )
 }
 
