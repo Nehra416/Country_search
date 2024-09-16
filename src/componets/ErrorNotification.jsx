@@ -2,7 +2,9 @@ import React from 'react'
 
 const ErrorNotification = () => {
   return (
-    <div>ErrorNotification</div>
+    <div>
+      Error:
+    </div>
   )
 }
 
