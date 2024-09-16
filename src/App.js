@@ -1,9 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    'welocome'
+    <div className="App">
+      <h1>Welcome to React!</h1>
+    </div>
   );
 }
 
