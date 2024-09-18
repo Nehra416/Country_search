@@ -20,8 +20,8 @@ const CountrySearch = () => {
     console.log(response)
   }
   return (
-    <div>
-      <form onSubmit={getCountryCard}>
+    <div className="search_page">
+      <form className="search_form" onSubmit={getCountryCard}>
         <input
           type="text"
           value={searchCountry}

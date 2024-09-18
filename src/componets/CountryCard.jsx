@@ -19,23 +19,23 @@ const CountryCard = () => {
     }
 
     return (
-        <>
+        <div>
             {
                 CountryDetails?.countryDetails.map((item, index) => {
 
                     return (
-                        <div className="card " key={index}>
+                        <div className="country_card" key={index}>
                             <img className="card-img-top" src={item.flags?.png} alt="Card image cap" />
                             <div className="card-body">
                                 <h2 className="card-title">{item?.name.common}</h2>
-                                <p className="card-text">{item?.population}</p>
+                                <p className="card-text"> Population: <span>{item?.population}</span></p>
                                 <button onClick={() => fullDetails(item.cca3)}>View full Detail</button>
                             </div>
                         </div>
                     )
                 })
             }
-        </>
+        </div>
     )
 }
 
