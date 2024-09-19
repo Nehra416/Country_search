@@ -16,8 +16,19 @@ Search Page CSS
 .search_page{
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+}
+.search_page .link{
+    color: #ffffff;
+    font-size: larger;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.search_page .link:hover{
+    color: #008CBA;
 }
 
 .search_form{
@@ -76,6 +87,7 @@ Country Card
     max-width: 300px;
     max-height: 200px;
     object-fit: contain;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 .card-body{
     display: flex;
@@ -113,11 +125,10 @@ Country Details
 
 .country_details{
     background-color: #ffffff;
+    min-height: 100vh;
     color: black;
     padding: 20px;
     border-radius: 10px;
-    margin: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -129,4 +140,51 @@ Country Details
 .country_details h2{
     text-align: center;
     margin-bottom: 10px;
+}
+
+
+
+/* 
+loading spinner
+*/
+
+.loading_page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #3f3f3f;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.spinner {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: auto;
+}
+
+.double-bounce1, .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #007bff; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.double-bounce2 {
+    animation-delay: -1s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(0.6);
+    }
+    50% {
+        transform: scale(1);
+    }
 }

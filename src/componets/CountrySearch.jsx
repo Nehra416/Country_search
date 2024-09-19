@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import LoadingSpinner from "./LoadingSpinner";
 import axios from "axios";
-import { useDispatch, useSelector } from 'react-redux'
+import { Link } from "react-router-dom";
+import { useDispatch, } from 'react-redux'
 import { setCountryDetails } from "../redux/CountryDetailSlice";
 
 const CountrySearch = () => {
   const [searchCountry, setSearchCountry] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch()
-  const CountryDetails = useSelector(state => state.CountryDetails);
+  // const CountryDetails = useSelector(state => state.CountryDetails);
 
   const getCountryCard = async (event) => {
     event.preventDefault()
     // navigate("/loading");
-    const response = await axios.get(`https://restcountries.com/v3.1/name/${searchCountry}`);
+    const response = await axios.get(`http://localhost:5000/api/countries?name=${searchCountry}`);
     dispatch(setCountryDetails(response.data))
     navigate('./card')
     console.log(response)
@@ -33,6 +33,9 @@ const CountrySearch = () => {
           Search
         </button>
       </form>
+
+      
+        <Link  to='/allcountries' className="link">All Countries</Link>
     </div>
   );
 };

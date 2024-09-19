@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-const ErrorNotification = () => {
+const ErrorNotification = ({ message }) => {
   return (
-    <div>
-      Error:
+    <div className="error-notification">
+      <strong>Error:</strong> {message || "An unexpected error occurred."}
     </div>
-  )
-}
+  );
+};
 
-export default ErrorNotification
+export default ErrorNotification;
